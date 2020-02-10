@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, Button, TouchableOpacity } from 'react-native';
+import SoundPlayButton from './components/SoundPlayButton'
 
 export default function App() {
   const [count, setCount] = useState(0)
   const onPress = () => {
     console.log('onPress')
   }
+
   return (
     <View style={styles.container}>
       <Text>You clicked {count} times</Text>
@@ -13,6 +15,7 @@ export default function App() {
         title="Press me"
         onPress={() => setCount(count + 1)}
       />
+      <SoundPlayButton name="A" />
       <View style={styles.buttonGroup}>
         <View style={styles.buttonContainer}>
           <TouchableOpacity onPress={() => onPress()}>

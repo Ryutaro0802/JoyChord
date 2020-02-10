@@ -1,14 +1,20 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, Button, TouchableOpacity } from 'react-native';
+import { MusicalInstrument } from './plugin/MusicalInstrument'
 import SoundPlayButton from './components/SoundPlayButton'
 
 export default function App() {
   const [count, setCount] = useState(0)
-  const onPress = () => {
-    console.log('onPress')
-  }
-  const soundPlay = (toneName: string): void => {
-    console.log(toneName)
+  const musicalInstrument: MusicalInstrument = new MusicalInstrument()
+  const soundPlay = (toneName: 'A'): void => {
+    const createMethodName = (name: 'A'): 'playA' => {
+      if (name === 'A') {
+        return 'playA'
+      }
+      return 'playA'
+    }
+
+    musicalInstrument[createMethodName(toneName)]()
   }
   return (
     <View style={styles.container}>
@@ -18,7 +24,7 @@ export default function App() {
         onPress={() => setCount(count + 1)}
       />
       <SoundPlayButton soundPlay={soundPlay} toneName="A" />
-      <View style={styles.buttonGroup}>
+      {/* <View style={styles.buttonGroup}>
         <View style={styles.buttonContainer}>
           <TouchableOpacity onPress={() => onPress()}>
             <Text style={styles.buttonText}>C</Text>
@@ -34,7 +40,7 @@ export default function App() {
             <Text style={styles.buttonText}>E</Text>
           </TouchableOpacity>
         </View>
-      </View>
+      </View> */}
     </View>
   );
 }

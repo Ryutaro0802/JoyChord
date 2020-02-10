@@ -7,7 +7,9 @@ export default function App() {
   const onPress = () => {
     console.log('onPress')
   }
-
+  const soundPlay = (toneName: string): void => {
+    console.log(toneName)
+  }
   return (
     <View style={styles.container}>
       <Text>You clicked {count} times</Text>
@@ -15,7 +17,7 @@ export default function App() {
         title="Press me"
         onPress={() => setCount(count + 1)}
       />
-      <SoundPlayButton name="A" />
+      <SoundPlayButton soundPlay={soundPlay} toneName="A" />
       <View style={styles.buttonGroup}>
         <View style={styles.buttonContainer}>
           <TouchableOpacity onPress={() => onPress()}>

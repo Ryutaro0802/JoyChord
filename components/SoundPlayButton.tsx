@@ -2,14 +2,13 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 
 export default function SoundPlayButton(props: any) {
-  const [count, setCount] = useState(0)
   const onPress = () => {
-    console.log('onPress')
+    props.soundPlay(props.toneName)
   }
   return (
     <View style={styles.buttonContainer}>
       <TouchableOpacity onPress={() => onPress()}>
-        <Text style={styles.buttonText}>C</Text>
+        <Text style={styles.buttonText}>{props.toneName}</Text>
       </TouchableOpacity>
     </View>
   );

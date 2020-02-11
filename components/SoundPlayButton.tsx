@@ -1,14 +1,19 @@
-import React, { useState } from 'react';
+import React, { FC, useState } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 
-export default function SoundPlayButton(props: any) {
+interface SoundPlayButtonProps {
+  toneName: string
+  soundPlay: (toneName: string) => string
+}
+
+const SoundPlayButton: FC<SoundPlayButtonProps> = ({ toneName, soundPlay }) => {
   const onPress = () => {
-    props.soundPlay(props.toneName)
+    soundPlay(toneName)
   }
   return (
     <View style={styles.buttonContainer}>
       <TouchableOpacity onPress={() => onPress()}>
-        <Text style={styles.buttonText}>{props.toneName}</Text>
+        <Text style={styles.buttonText}>{toneName}</Text>
       </TouchableOpacity>
     </View>
   );
@@ -31,3 +36,5 @@ const styles = StyleSheet.create({
     fontSize: 20,
   }
 });
+
+export default SoundPlayButton

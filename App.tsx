@@ -24,6 +24,7 @@ export default function App() {
         onPress={() => setCount(count + 1)}
       />
       <SoundPlayButton soundPlay={soundPlay} toneName="A" />
+      <SoundPlayButton soundPlay={soundPlay} toneName="A" />
       {/* <View style={styles.buttonGroup}>
         <View style={styles.buttonContainer}>
           <TouchableOpacity onPress={() => onPress()}>

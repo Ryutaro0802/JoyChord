@@ -3,11 +3,15 @@ import { StyleSheet, Text, View, Button, TouchableOpacity } from 'react-native';
 import { MusicalInstrument } from './plugin/MusicalInstrument'
 import SoundPlayButton from './components/SoundPlayButton'
 
+interface ToneName {
+
+}
+
 export default function App() {
   const [count, setCount] = useState(0)
   const musicalInstrument: MusicalInstrument = new MusicalInstrument()
-  const soundPlay = (toneName: 'A'): void => {
-    const createMethodName = (name: 'A'): 'playA' => {
+  const soundPlay = (toneName: 'C' | 'D' | 'E' | 'F' | 'G' | 'A'): void => {
+    const createMethodName = (name: 'C' | 'D' | 'E' | 'F' | 'G' | 'A'): 'playC' | 'playD' | 'playE' | 'playF' | 'playG' | 'playA' => {
       if (name === 'A') {
         return 'playA'
       }
@@ -24,7 +28,8 @@ export default function App() {
         onPress={() => setCount(count + 1)}
       />
       <SoundPlayButton soundPlay={soundPlay} toneName="A" />
-      <SoundPlayButton soundPlay={soundPlay} toneName="A" />
+      <SoundPlayButton soundPlay={soundPlay} toneName="C" />
+      {/* <SoundPlayButton soundPlay={soundPlay} toneName="A" /> */}
       {/* <View style={styles.buttonGroup}>
         <View style={styles.buttonContainer}>
           <TouchableOpacity onPress={() => onPress()}>

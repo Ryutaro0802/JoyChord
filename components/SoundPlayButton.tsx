@@ -2,8 +2,8 @@ import React, { FC, useState } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 
 interface SoundPlayButtonProps {
-  toneName: string
-  soundPlay: (toneName: string) => string
+  toneName: 'C' | 'D' | 'E' | 'F' | 'G' | 'A'
+  soundPlay: (toneName: 'C' | 'D' | 'E' | 'F' | 'G' | 'A') => void
 }
 
 const SoundPlayButton: FC<SoundPlayButtonProps> = ({ toneName, soundPlay }) => {

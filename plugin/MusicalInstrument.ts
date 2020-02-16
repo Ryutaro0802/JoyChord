@@ -23,7 +23,7 @@ export class MusicalInstrument {
     async playA() {
         try {
             await Audio.Sound.createAsync(
-                require('../assets/A.mp3'),
+                require('../assets/pianoA.mp3'),
                 { shouldPlay: true }
             );
         } catch (error) {
